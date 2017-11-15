@@ -6,7 +6,7 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-content'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-content' ); ?>>
 
 	<?php nisarg_featured_image_disaplay(); ?>
 
@@ -27,14 +27,13 @@
 
 	<div class="entry-content">
 		<?php if ( is_single() || ! get_post_gallery() ) : ?>
-			<?php the_content('...<p class="read-more"><a class="btn btn-default" href="'. esc_url(get_permalink( get_the_ID() )) . '">' . __(' Read More', 'nisarg') . '<span class="screen-reader-text"> '. __(' Read More', 'nisarg').'</span></a></p>'); ?>
+			<?php the_content( '...<p class="read-more"><a class="btn btn-default" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __( ' Read More', 'nisarg' ) . '<span class="screen-reader-text"> '. __( ' Read More', 'nisarg' ).'</span></a></p>' ); ?>
 			<?php
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nisarg' ),
 					'after'  => '</div>',
 				) );
-			?>			
-		
+			?>
 		<?php else : ?>
 			<?php echo get_post_gallery(); ?>
 		<?php endif; // is_single() ?>

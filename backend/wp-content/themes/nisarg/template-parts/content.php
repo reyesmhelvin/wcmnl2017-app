@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>"  <?php post_class('post-content'); ?>>
+<article id="post-<?php the_ID(); ?>"  <?php post_class( 'post-content' ); ?>>
 
 	<?php
 	if ( is_sticky() && is_home() && ! is_paged() ) {
@@ -15,11 +15,9 @@
 	} ?>
 
 	<?php nisarg_featured_image_disaplay(); ?>
-	
-	<header class="entry-header">	
-	
-		<span class="screen-reader-text"><?php the_title();?></span>
 
+	<header class="entry-header">
+		<span class="screen-reader-text"><?php the_title();?></span>
 		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php else : ?>
@@ -34,10 +32,10 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-	
+
 			<div class="entry-content">
-				<?php					
-					the_content('...<p class="read-more"><a class="btn btn-default" href="'. esc_url(get_permalink( get_the_ID() )) . '">' . __(' Read More', 'nisarg') . '<span class="screen-reader-text"> '. __(' Read More', 'nisarg').'</span></a></p>');
+				<?php
+					the_content( '...<p class="read-more"><a class="btn btn-default" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __( ' Read More', 'nisarg' ) . '<span class="screen-reader-text"> '. __( ' Read More', 'nisarg' ).'</span></a></p>' );
 				?>
 
 				<?php

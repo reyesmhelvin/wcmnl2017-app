@@ -293,45 +293,62 @@ function nisarg_get_color_scheme_css( $colors ) {
 	    color: {$colors['accent_color']};
 	}
 
-	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	.main-navigation .primary-menu > li > a:hover, .main-navigation .primary-menu > li > a:focus {
 		color: {$colors['accent_color']};
 	}
-
 	
-	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-		color: {$colors['accent_color']};			
+	.main-navigation .primary-menu .sub-menu .current_page_item > a,
+	.main-navigation .primary-menu .sub-menu .current-menu-item > a {
+		color: {$colors['accent_color']};
+	}
+	.main-navigation .primary-menu .sub-menu .current_page_item > a:hover,
+	.main-navigation .primary-menu .sub-menu .current_page_item > a:focus,
+	.main-navigation .primary-menu .sub-menu .current-menu-item > a:hover,
+	.main-navigation .primary-menu .sub-menu .current-menu-item > a:focus {
+		background-color: #fff;
+		color: {$colors['accent_color']};
+	}
+	.dropdown-toggle:hover,
+	.dropdown-toggle:focus {
+		color: {$colors['accent_color']};
 	}
 
 	@media (min-width: 768px){
-		.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+		.main-navigation .primary-menu > .current_page_item > a,
+		.main-navigation .primary-menu > .current_page_item > a:hover,
+		.main-navigation .primary-menu > .current_page_item > a:focus,
+		.main-navigation .primary-menu > .current-menu-item > a,
+		.main-navigation .primary-menu > .current-menu-item > a:hover,
+		.main-navigation .primary-menu > .current-menu-item > a:focus,
+		.main-navigation .primary-menu > .current_page_ancestor > a,
+		.main-navigation .primary-menu > .current_page_ancestor > a:hover,
+		.main-navigation .primary-menu > .current_page_ancestor > a:focus,
+		.main-navigation .primary-menu > .current-menu-ancestor > a,
+		.main-navigation .primary-menu > .current-menu-ancestor > a:hover,
+		.main-navigation .primary-menu > .current-menu-ancestor > a:focus {
 			border-top: 4px solid {$colors['accent_color']};
-		}		
+		}
+		.main-navigation ul ul a:hover,
+		.main-navigation ul ul a.focus {
+			color: #fff;
+			background-color: {$colors['accent_color']};
+		}
 	}
 
-	.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {	    
-	    background-color: {$colors['accent_color']};
-	}
-
-
-	.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	.main-navigation .primary-menu > .open > a, .main-navigation .primary-menu > .open > a:hover, .main-navigation .primary-menu > .open > a:focus {
 		color: {$colors['accent_color']};
 	}
 
-	.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-	.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+	.main-navigation .primary-menu > li > .sub-menu  li > a:hover,
+	.main-navigation .primary-menu > li > .sub-menu  li > a:focus {
 		color: #fff;
 		background-color: {$colors['accent_color']};
 	}
 
-	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-		background-color: #fff;
-		color: {$colors['accent_color']};
-	}
-
 	@media (max-width: 767px) {
-		.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
-			background-color: {$colors['accent_color']};
+		.main-navigation .primary-menu .open .sub-menu > li > a:hover {
 			color: #fff;
+			background-color: {$colors['accent_color']};
 		}
 	}
 

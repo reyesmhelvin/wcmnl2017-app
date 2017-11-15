@@ -13,7 +13,6 @@
 		                    .find( '#nisarg-color-scheme-css' );
 	}
 
-		
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -56,7 +55,5 @@
 			$style.html( css );
 		} );
 	} );
-
-
 } )( jQuery );
 

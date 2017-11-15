@@ -212,14 +212,19 @@ function nisarg_categorized_blog() {
 }
 
 /**
-*  Display featured image of the post
-**/
-
-function nisarg_featured_image_disaplay(){
-	if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) {  // check if the post has a Post Thumbnail assigned to it. 
-        echo '<div class="featured-image">';
-            the_post_thumbnail('nisarg-full-width');
-        echo '</div>';
+ *  Display featured image of the post
+ */
+function nisarg_featured_image_disaplay() {
+	if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) {  // check if the post has a Post Thumbnail assigned to it. ?>
+        <div class="featured-image">
+        	<?php if( !is_single() ) { ?>
+        	<a href="<?php the_permalink(); ?>" rel="bookmark">
+            <?php } 
+            the_post_thumbnail('nisarg-full-width'); ?>
+            <?php if( !is_single() ) { ?>
+            </a> <?php } ?>        
+        </div>
+        <?php 
     } 
 }
 

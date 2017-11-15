@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>"  <?php post_class('post-content'); ?>>
+<article id="post-<?php the_ID(); ?>"  <?php post_class( 'post-content' ); ?>>
 
 	<?php
 	if ( is_sticky() && is_home() && ! is_paged() ) {
@@ -15,9 +15,9 @@
 	} ?>
 
 	<?php nisarg_featured_image_disaplay(); ?>
-	
-	<header class="entry-header">	
-	
+
+	<header class="entry-header">
+
 		<span class="screen-reader-text"><?php the_title();?></span>
 
 		<?php if ( is_single() ) : ?>
@@ -34,11 +34,10 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-		
-    <div class="entry-summary">
 
-        <?php the_excerpt(); ?>
-    </div><!-- .entry-summary -->		   	
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
 		<?php nisarg_entry_footer(); ?>

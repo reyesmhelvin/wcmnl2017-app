@@ -4,10 +4,10 @@ Theme URI: http://falgunidesai.com/work/nisarg-a-wordpress-theme/
 Author: Falguni Desai
 Author URI: http://falgunidesai.com/
 Description: Nisarg is a new fully responsive and translation ready theme that allows you to create stunning blogs and websites. Theme is well suited for travel, photography, recipe, design, art, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablets friendly.  It has various options in WordPress Customizer to change look of the theme. Theme customizer can be used to add your own header image of flexible height, background image, to set background color, header text color and accent color(Supports seven different accent colors).  Theme supports eight post formats, such as: Video, Image, Aside, Status, Audio, Quote, Link and Gallery. 
-Version: 1.2.6
+Version: 1.2.8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: pink,orange,blue,green,yellow, gray, white,black,light,two-columns, right-sidebar, responsive-layout, theme-options, custom-background, custom-header, custom-colors, custom-menu, featured-images,  post-formats, sticky-post, translation-ready, rtl-language-support,threaded-comments
+Tags: flexible-header, two-columns, right-sidebar, theme-options, custom-colors, custom-background, custom-header, custom-colors, custom-menu, featured-images,  post-formats, sticky-post, translation-ready, rtl-language-support, threaded-comments, featured-images, sticky-post
 Text Domain: nisarg
 
 This theme is licensed under the GPL.
@@ -481,11 +481,7 @@ img.wp-post-image{
  .nav{
     display: block;
 }
-
- .navbar{
-    margin-bottom: 0px;
- }
- .navbar-fixed-top,
+.navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
   top:0;
@@ -506,121 +502,315 @@ img.wp-post-image{
     .admin-bar .navbar-fixed-top{
     top: 46px;
     position: absolute;
-  }
-  
+  } 
 }
-
-.navbar{ 
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: uppercase;
-    border:none;
-}
-
 .navbar-brand{
     font-size: 20px;
     font-weight: 600;
 }
-
-.navbar-nav{
-    float: right;
+.main-navigation {
+    background-color: white;
+    box-shadow: 0px 1px 1px rgba(100,100,100, 0.2);
+    clear: both;
+    display: block;
+    float: left;
+    margin-bottom: 0px;
+    width: 100%;
+    text-transform: uppercase;
 }
-.navbar-nav > li > a {
+.main-navigation ul {
+    display: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.main-navigation li {
+    position: relative;
+}
+
+.main-navigation > li > a {
     padding-top: 11px;
     padding-bottom: 11px;
+    line-height: 20px;
 }
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+}
+.primary-menu > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.sub-menu > li > a {
+    display: block;
+    padding: 10px 15px;
+    clear: both;
+    font-weight: normal;
+}
+.sub-menu {
+    text-align: left;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: none;
+}
+.main-navigation .open > a, .main-navigation .open > a:hover, .main-navigation .open > a:focus {
     background-color: #fff;
     border-color: #fff;
 }
-.navbar-default { 
-    background-color: #ffffff;
-    box-shadow: 0px 1px 1px rgba(100,100,0, 0.1);
-}
-.navbar-default .navbar-brand {
+.main-navigation .navbar-brand {
     color: #333333;
 }
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+.main-navigation .navbar-brand:hover, .main-navigation .navbar-brand:focus {
     color: #000000;
 }
-.navbar-default .navbar-text {
+.main-navigation .navbar-text {
     color: #333333;
 }
-.navbar-default .navbar-nav > li > a {
+.main-navigation .primary-menu > li > a {
     border-top: 4px solid #fff;
     border-bottom: 4px solid #fff;
-}
-.navbar-default .navbar-nav > li > a {
     color: #333333;
 }
-.navbar-default .navbar-nav > li > .dropdown-menu {
-background-color: #ffffff;
+.main-navigation .primary-menu > li > ul.toggle-on{
+    display: block;
 }
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-color: #333333;
+.main-navigation .primary-menu > li > .sub-menu > li > a {
+    color: #333333;
 }
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-color: #fff;
+.main-navigation .primary-menu > li > .sub-menu > li > a:hover,
+.main-navigation .primary-menu > li > .sub-menu > li > a:focus {
+    color: #777;
 }
-.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
-background-color: #ffffff;
+.main-navigation .primary-menu > li > .sub-menu > li > .divider {
+    background-color: #ffffff;
 }
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-background: #fff;
+.main-navigation .primary-menu > .active > a, .main-navigation .primary-menu > .active > a:hover, .main-navigation .primary-menu > .active > a:focus {
+    background: #fff;
 }
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-background: #fff;
+.main-navigation .primary-menu > .open > a, .main-navigation .primary-menu > .open > a:hover, .main-navigation .primary-menu > .open > a:focus {
+    background: #fff;
 }
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+.main-navigation .open > a, .main-navigation .open > a:hover, .main-navigation .open > a:focus {
     background-color: #fff;
     border-color: #fff;
 }
-
-.navbar-default .navbar-toggle {
-border-color: #455A64;
+.main-navigation ul ul {
+    display: none;
+    margin-left: 0.875em;
 }
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-background-color: #455A64;
-color: #fff;
+.no-js .main-navigation ul ul {
+    display: block;
 }
-.navbar-default .navbar-toggle .icon-bar {
-background-color: #333;
+.main-navigation ul ul a {
+    color: #333333;
 }
-.navbar-default .navbar-toggle:hover .icon-bar,.navbar-default .navbar-toggle:focus .icon-bar{
-background-color: #fff;
-}
-
-.navbar-default .navbar-link {
-color: #333333;
-}
-.navbar-default .navbar-link:hover {
-color: #000000;
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+    left: auto;
 }
 
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-    color: #FFF;
-    text-decoration: none;
-    outline: 0px none;
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+    left: 100%;
 }
-
-
-@media (max-width: 767px) {
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-	color: #333333;
-	}
-    .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-       max-height: 600px;
+.main-navigation .menu-toggle {
+    border-color: #455A64;
+}
+.main-navigation .menu-toggle:hover, .main-navigation .menu-toggle:focus {
+    background-color: #455A64;
+    color: #fff;
+}
+.main-navigation .menu-toggle .icon-bar {
+    background-color: #333;
+}
+.main-navigation .menu-toggle:hover .icon-bar,.main-navigation .menu-toggle:focus .icon-bar{
+    background-color: #fff;
+}
+.main-navigation .navbar-link {
+    color: #333333;
+}
+.main-navigation .navbar-link:hover {
+    color: #000000;
+}
+.menu-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.menu-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.menu-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+.dropdown-toggle {
+    background-color: #fff;
+    background: linear-gradient(#fff, #fff);
+    border: 0;
+    border-radius: 0;
+    color: #1a1a1a;
+    content: "";
+    /*height: 48px;*/
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    left: auto;
+    text-transform: none;
+    top: 0;
+    width: 40px;
+}
+.dropdown-toggle:hover, .dropdown-toggle:focus {
+    background-color: #fff;
+    background: linear-gradient(#fff, #fff);
+}
+.dropdown-toggle:after {
+    border: 0 solid #d1d1d1;
+    background-color: #fff;
+    font-family: FontAwesome;
+    content: '\f0d7';
+    font-size: 14px;
+    left: 1px;
+    position: relative;
+    width: 40px;
+}
+.dropdown-toggle.toggled-on:after {
+    content: '\f0d8';
+}
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    background-color: transparent;
+    border: none;
+    color: #777;
+    outline: none;
+    outline-offset: -1px;
+}
+.dropdown-toggle:focus:after {
+    border-color: transparent;
+}
+.dropdown-toggle,
+.menu-toggle {
+    display: block;
+}
+.main-navigation .primary-menu .open .sub-menu > li > a {
+    color: #333333;
+}
+.main-navigation .navbar-collapse, .main-navigation .navbar-collapse {
+   max-height: 900px;
+}
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled .primary-menu {
+    display: block;
+}
+.menu-toggle:focus {
+    outline: 0;
+}
+.main-navigation ul .toggled-on {
+    display: block;
+}
+@media screen and (min-width: 768px) {
+    .dropdown-toggle,
+    .main-navigation ul .dropdown-toggle.toggled-on,
+    .menu-toggle {
+        display: none;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .main-navigation ul {
+        display: block;
+        float: right;
+    }
+    .main-navigation ul ul {
+        float: left;
+        position: absolute;
+        /*top: 1.5em;*/
+        top: 100%;
+        left: -999em;
+        display: block;
+        z-index: 99999;
+        margin-left: 0;
+    }
+    .main-navigation ul ul ul {
+        left: -999em;
+        display: block;
+        top: -1px;
+    }
+    .main-navigation ul ul a {
+        min-width: 160px;
+    }
+    .main-navigation li {
+        float: left;
+    }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+        left: auto;
+        display: block;
+    }
+    .main-navigation ul ul li:hover > ul,
+    .main-navigation ul ul li.focus > ul {
+        left: 100%;
+        display: block;
+    }
+    .sub-menu {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0; 
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+    .main-navigation .menu-item-has-children > a {
+        margin: 0;
+        padding-right: 2.25em;
+    }
+    .main-navigation .menu-item-has-children > a:after {
+        content: '\f0d7';
+        font-family: FontAwesome;
+        position: absolute;
+        right: 1.125em;
+        top: 0.8125em;
+    }
+    .main-navigation ul ul .menu-item-has-children > a {
+        padding-right: 15px;
+    }
+    .main-navigation ul ul .menu-item-has-children > a:after {
+        right: 0.5625em;
+        top: 0.8em;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    .main-navigation .primary-menu > li > .sub-menu {
+        background-color: #ffffff;
+        margin-top: 0;
     }
 }
-
-@media (min-width: 768px) {
-  ul.nav li.dropdown:hover > ul.dropdown-menu {
-    display: block;
-  }
+@media screen and (min-width: 800px) {
+    .main-navigation ul ul a {
+        min-width: 160px;
+    }
 }
-
 /**
  * 3.2 Site Header
  * ----------------------------------------------------------------------------
@@ -632,7 +822,7 @@ color: #000000;
     width: 100%;
     margin-bottom: 3em;
     overflow: hidden;
-    min-height: 200px;
+    min-height: 120px;
 }
 
 .site-header .site-branding {
@@ -1373,7 +1563,7 @@ color: #000000;
     }
 
     .site-title {
-        font-size: 2.1em;
+        font-size: 2em;
         letter-spacing: 10px;  
     }
 
@@ -1407,7 +1597,7 @@ color: #000000;
     }
 
     .site-title {
-        font-size: 2em;
+        font-size: 1.5em;
         letter-spacing: 2px;  
         margin-top: 5px;
         margin-bottom: 3px;
