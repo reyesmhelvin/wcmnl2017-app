@@ -1,15 +1,16 @@
-const req = fetch('http://localhost:8080/wp-json/wp/v2/posts').then(response => {
-  response.json().then(posts => {
-    console.log(posts,'post')
-    return posts;
-  });
+const wpRequestPosts = [];
+
+fetch('http://192.168.99.100:8080/wp-json/acf/v3/posts')
+.then(response => response.json())
+.then((data)=>{
+  return data.map((item)=>{
+    wpRequestPosts.push(item)
+  })
 });
 
 var app = new Vue({
   el: '#app',
-  data: {
-    myRequest: req
+  data:{ 
+    posts: wpRequestPosts
   }
 }) 
-
-console.log(req.resolve(),'req');
